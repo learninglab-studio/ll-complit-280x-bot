@@ -1,0 +1,32 @@
+{
+  "name": "ll-complit-280x-bot",
+  "version": "1.0.0",
+  "description": "a bot that helps complit 280x",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "NODE_ENV=dev nodemon ./app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/learninglab-studio/ll-complit-280x-bot.git"
+  },
+  "keywords": ["bot"],
+  "author": "learninglab-studio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/learninglab-studio/ll-complit-280x-bot/issues"
+  },
+  "homepage": "https://github.com/learninglab-studio/ll-complit-280x-bot#readme",
+  "dependencies": {
+    "@slack/bolt": "^3.17.1",
+    "airtable": "^0.12.2",
+    "axios": "^1.6.8",
+    "dotenv": "^16.4.5",
+    "learninglab-log": "^1.0.2",
+    "node-cron": "^3.0.3",
+    "open-graph-scraper": "^6.5.1",
+    "openai": "^4.37.1",
+    "yargs": "^17.7.2"
+  }
+}
