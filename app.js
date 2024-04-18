@@ -1,6 +1,7 @@
 const { App } = require("@slack/bolt");
 const llog = require("learninglab-log");
 const path = require("path");
+const poetBot = require("./src/bots/poet-bot");
 
 global.ROOT_DIR = path.resolve(__dirname);
 
@@ -16,14 +17,15 @@ const app = new App({
   port: process.env.PORT || 3000,
 });
 
-// app.command("/280x");
-
 app.message("magic word", async ({ client, message, say }) => {
   let slackResult = await client.chat.postMessage({
     channel: message.channel,
     text: `you said the magic word, <@${message.user}>!`,
   });
 });
+
+app.message("poem", poetBot);
+
 app.message(/.*/, async ({ client, message, say }) => {
   llog.magenta(
     `parsing all messages, including this one from ${message.channel}`,
