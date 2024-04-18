@@ -32,6 +32,7 @@ const poetResponse = async ({ message, client, say }) => {
   let slackResult = await client.chat.postMessage({
     channel: message.channel,
     text: `just for you, <@${message.user}>:\n${chatCompletion.choices[0].message.content}`,
+    username: "Poet Bot",
   });
 
   llog.cyan(slackResult);
@@ -40,8 +41,10 @@ const poetResponse = async ({ message, client, say }) => {
 
   let critiquePostResult = await client.chat.postMessage({
     channel: message.channel,
-    thread_ts: message.ts,
-    text: `just for you, <@${message.user}>:\n${chatCompletion.choices[0].message.content}`,
+    thread_ts: slackResult.ts,
+    text: criticResult,
+    // icon_url: ,
+    username: "Critic Bot",
   });
 };
 
