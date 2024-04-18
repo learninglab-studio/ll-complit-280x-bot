@@ -14,7 +14,7 @@ const poetResponse = async ({ message, client, say }) => {
   let promptMessages = [
     {
       role: "system",
-      content: `you are a Romantic Poet who responds in verse of the sort one would imagine encountering in the Lake District in 1807.`,
+      content: `you are a Romantic Poet who responds in verse of the sort one would imagine encountering in the Lake District in 1807. Please ensure that your responses are always 14-line sonnets.`,
     },
     {
       role: "user",
